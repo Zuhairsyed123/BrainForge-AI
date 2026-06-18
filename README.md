@@ -1,4 +1,4 @@
-# ⚡ BrainForge AI - Startup Idea Planner & Viability Sandbox
+#  BrainForge AI - Startup Idea Planner & Viability Sandbox
 
 BrainForge AI is a premium, responsive web application built with **Python, Django, and Vanilla CSS** that helps builders, hackathon teams, and entrepreneurs structure vague startup ideas into comprehensive execution blueprints. 
 
@@ -6,7 +6,7 @@ By analyzing constraints such as weekly time commitment, budget, goals, and tech
 
 ---
 
-## 🚀 Advanced Hackathon Features
+##  Advanced Hackathon Features
 
 ### 1. BrainForge Readiness Score
 A weighted scoring engine generating a single overall readiness score out of 100 based on:
@@ -34,7 +34,7 @@ An interactive team overview panel at `/team/` and in the navigation dropdown re
 
 ---
 
-## 🛠️ Local Setup & Setup Instructions
+##  Local Setup & Setup Instructions
 
 To run the application locally on your system, follow the steps below:
 
@@ -81,7 +81,7 @@ Open **`http://127.0.0.1:8000/`** in your browser.
 
 ---
 
-## 🧪 Testing & Verification
+##  Testing & Verification
 
 We have implemented a comprehensive test suite covering models, mock fallbacks, views, and view calculations.
 
@@ -105,7 +105,7 @@ Destroying test database for alias 'default'...
 
 ---
 
-## 📐 Technology Stack
+##  Technology Stack
 - **Backend**: Python 3.11, Django 4.2
 - **AI Models**: Google Gemini API (`gemini-3.5-flash`) with high-fidelity local mock fallbacks
 - **Libraries**: ReportLab, Pillow, python-dotenv
