@@ -39,6 +39,50 @@ A floating conversational AI assistant on the project detail page that has compl
 A sun/moon theme toggle button in the top navigation bar to instantly transition between the default premium light theme and a customized deep dark slate theme. Preferences are persisted in `localStorage` and checked in `<head>` to prevent light-theme flashes.
 
 ---
+## AI Processing Pipeline
+
+BrainForge AI follows a structured reasoning workflow:
+
+1. Collect project inputs
+2. Analyze feasibility constraints
+3. Calculate readiness score
+4. Detect hidden assumptions
+5. Identify project risks
+6. Simulate future scenarios
+7. Generate execution roadmap
+8. Recommend first action
+9. Enable interactive coaching via BrainForge Coach
+10. Export comprehensive PDF reports
+
+---
+## Responsible AI
+
+### Risk
+Users may over-rely on AI-generated recommendations.
+
+### Mitigation
+- Confidence indicators
+- Multiple scenario simulations
+- Explicit uncertainty communication
+- Human-in-the-loop decision making
+
+### Human Control
+BrainForge AI never decides whether a user should pursue a project.
+
+The final decision remains entirely with the user.
+
+---
+## Future Enhancements
+
+- User authentication
+- Multi-project workspace
+- Team collaboration
+- Industry-specific planning templates
+- Advanced analytics dashboards
+- Mobile application
+- Historical decision tracking
+
+---
 
 ##  Local Setup & Setup Instructions
 
