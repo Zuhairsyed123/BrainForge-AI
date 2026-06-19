@@ -32,6 +32,12 @@ A prominent `🚀 Load Hackathon Demo` button on the home dashboard that instant
 ### 6. Team Details Widget
 An interactive team overview panel at `/team/` and in the navigation dropdown representing team metadata, roles, and profiles.
 
+### 7. BrainForge Coach Context-Aware Chatbot
+A floating conversational AI assistant on the project detail page that has complete access to the specific project analysis context (feasibility, risks, milestones, debate recommendations) to answer questions, explain scores, and brainstorm next steps in real-time.
+
+### 8. Premium Dark Theme Switcher
+A sun/moon theme toggle button in the top navigation bar to instantly transition between the default premium light theme and a customized deep dark slate theme. Preferences are persisted in `localStorage` and checked in `<head>` to prevent light-theme flashes.
+
 ---
 
 ##  Local Setup & Setup Instructions
@@ -92,12 +98,12 @@ python manage.py test planner
 
 Output:
 ```text
-Found 9 test(s).
+Found 15 test(s).
 Creating test database for alias 'default'...
 System check identified no issues (0 silenced).
-.........
+...............
 ----------------------------------------------------------------------
-Ran 9 tests in 0.145s
+Ran 15 tests in 1.855s
 
 OK
 Destroying test database for alias 'default'...
