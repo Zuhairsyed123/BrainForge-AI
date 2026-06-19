@@ -27,7 +27,7 @@ An interactive AJAX sandbox playground. Drag sliders to adjust weekly hours, bud
 Generates a multi-page PDF report including a custom title page, table representations of feasibility indicators, roadmap milestones, assumptions grids, and disclaimer panels.
 
 ### 5. Pitch Demo Mode
-A prominent `🚀 Load Hackathon Demo` button on the home dashboard that instantly seeds a rich prototype plan for an **"AI Resume Analyzer"** startup project, populating the entire dashboard database.
+A prominent ` Load Hackathon Demo` button on the home dashboard that instantly seeds a rich prototype plan for an **"AI Resume Analyzer"** startup project, populating the entire dashboard database.
 
 ### 6. Team Details Widget
 An interactive team overview panel at `/team/` and in the navigation dropdown representing team metadata, roles, and profiles.
