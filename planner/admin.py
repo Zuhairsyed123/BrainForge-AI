@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import UserProject, ProjectAnalysis, ProjectChatMessage
 
-# Register your models here.
+admin.site.register(UserProject)
+admin.site.register(ProjectAnalysis)
+admin.site.register(ProjectChatMessage)

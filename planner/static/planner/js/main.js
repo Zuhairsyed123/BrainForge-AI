@@ -3,7 +3,7 @@
  * AJAX Form Handling, Dynamic Loader Simulation, Task Checklist
  * ------------------------------------------------------------- */
 
-document.addEventListener("DOMContentLoaded", function () {
+function initializeBrainForge() {
     const form = document.getElementById("idea-submission-form");
     const overlay = document.getElementById("loading-overlay");
     const loadingStep = document.getElementById("loading-step");
@@ -145,4 +145,23 @@ document.addEventListener("DOMContentLoaded", function () {
             card.scrollIntoView({ behavior: "smooth" });
         }
     }
-});
+
+    // --- 5. GLOBAL DARK THEME TOGGLER ---
+    console.log("DOMContentLoaded: Registering theme toggler...");
+    const themeToggleBtn = document.getElementById("theme-toggle");
+    console.log("themeToggleBtn element found:", themeToggleBtn);
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener("click", function () {
+            console.log("Theme toggle button clicked!");
+            const isDark = document.documentElement.classList.toggle("dark-theme");
+            console.log("New theme state (isDark):", isDark);
+            localStorage.setItem("theme", isDark ? "dark" : "light");
+        });
+    }
+}
+
+if (document.readyState === "interactive" || document.readyState === "complete") {
+    initializeBrainForge();
+} else {
+    document.addEventListener("DOMContentLoaded", initializeBrainForge);
+}
