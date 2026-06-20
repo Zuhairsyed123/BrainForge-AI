@@ -93,12 +93,14 @@ WSGI_APPLICATION = "brainforge.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# On Vercel, the project root is read-only; use /tmp for SQLite.
+# On Vercel, the project root is read-only; use /tmp for SQLite and staticfiles.
 # On Render/local, use the project root as normal.
 if os.getenv("VERCEL"):
     DB_PATH = "/tmp/db.sqlite3"
+    STATIC_ROOT = "/tmp/staticfiles"
 else:
     DB_PATH = BASE_DIR / "db.sqlite3"
+    STATIC_ROOT = BASE_DIR / "staticfiles"
 
 DATABASES = {
     "default": {
@@ -143,7 +145,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = "/static/"
-STATIC_ROOT = BASE_DIR / "staticfiles"
+
 
 # WhiteNoise — compressed static files in production (no manifest required)
 STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
