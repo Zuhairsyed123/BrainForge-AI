@@ -168,35 +168,35 @@ JSON Structure:
   }},
   "first_action": "Generate exactly ONE immediate action the user should take today. Make it highly action-oriented and concrete.",
   "confidence_level": "High",
-  "mentor_debate": {
-    "builder": {
+  "mentor_debate": {{
+    "builder": {{
       "recommendation": "Builder's recommendation (Focus: speed, execution, MVP creation, learning by doing)",
       "concern": "Builder's main concern",
       "next_step": "Builder's suggested next step"
-    },
-    "investor": {
+    }},
+    "investor": {{
       "recommendation": "Investor's recommendation (Focus: market validation, viability, scalability, financial risk)",
       "concern": "Investor's main concern",
       "next_step": "Investor's suggested next step"
-    },
-    "engineer": {
+    }},
+    "engineer": {{
       "recommendation": "Engineer's recommendation (Focus: technical feasibility, architectural complexity, resource requirements, risks)",
       "concern": "Engineer's main concern",
       "next_step": "Engineer's suggested next step"
-    },
+    }},
     "agreement": "Core areas where all three experts agree",
     "disagreement": "Core areas where the experts disagree",
     "tradeoff_summary": "Tradeoff summary highlighting the conflict between speed, risk, and viability"
-  },
+  }},
   "blind_spots": [
-    {
+    {{
       "name": "One of: Confirmation Bias, Overconfidence, Unrealistic Timelines, Missing User Validation, Ignored Competition, Underestimated Technical Complexity, Resource Constraints",
       "impact": "High, Medium, or Low",
       "explanation": "Detailed explanation of why this blind spot exists in the project setup",
       "recommendation": "Actionable, concrete recommendation to validate or mitigate"
-    }
+    }}
   ],
-  "opportunity_cost": {
+  "opportunity_cost": {{
     "benefits": [
       "Benefit 1 (e.g. portfolio growth, skill development, startup experience)",
       "Benefit 2",
@@ -209,7 +209,7 @@ JSON Structure:
     ],
     "net_opportunity_score": 75,
     "summary": "Summary of what opportunities are being sacrificed vs gained by choosing this project"
-  }
+  }}
 }}
 
 Ensure all scores are integers between 1 and 10.
