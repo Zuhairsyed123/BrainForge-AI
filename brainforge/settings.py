@@ -137,8 +137,8 @@ USE_TZ = True
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
-# WhiteNoise — compressed, cached static files in production
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+# WhiteNoise — compressed static files in production (no manifest required)
+STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 
 # Google Gemini API configuration
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
