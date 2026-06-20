@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: brainforge-ai
+    runtime: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn brainforge.wsgi:application"
+    envVars:
+      - key: DEBUG
+        value: False
+      - key: SECRET_KEY
+        generateValue: true
+      - key: GEMINI_API_KEY
+        sync: false  # You will set this manually in the Render dashboard
+      - key: PYTHON_VERSION
+        value: 3.11.0
