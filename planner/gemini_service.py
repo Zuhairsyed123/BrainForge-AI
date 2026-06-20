@@ -1,4 +1,5 @@
-import google.generativeai as genai
+from google import genai
+from google.genai import types
 from django.conf import settings
 import json
 import logging
@@ -8,6 +9,16 @@ import warnings
 warnings.filterwarnings("ignore", category=FutureWarning)
 
 logger = logging.getLogger(__name__)
+
+
+def _get_client():
+    """Returns a configured Gemini client."""
+    api_key = getattr(settings, "GEMINI_API_KEY", "")
+    if not api_key or api_key == "your_gemini_api_key_here":
+        raise ValueError(
+            "Gemini API Key is not configured. Please set a valid GEMINI_API_KEY in the .env file."
+        )
+    return genai.Client(api_key=api_key)
 
 
 def generate_project_analysis(
@@ -22,10 +33,8 @@ def generate_project_analysis(
             "Gemini API Key is not configured. Please set a valid GEMINI_API_KEY in the .env file."
         )
 
-    genai.configure(api_key=api_key)
+    client = genai.Client(api_key=api_key)
 
-    # Use gemini-3.5-flash as the default model
-    model = genai.GenerativeModel("gemini-3.5-flash")
 
     prompt = f"""
 You are an expert startup advisor, venture strategist, and project management master.
@@ -211,10 +220,12 @@ Ensure confidence_level is exactly one of 'High', 'Medium', 'Low'.
 Keep rationales and descriptions concise but professional and realistic. Output ONLY valid JSON.
 """
 
-    generation_config = {"response_mime_type": "application/json"}
-
     try:
-        response = model.generate_content(prompt, generation_config=generation_config)
+        response = client.models.generate_content(
+            model="gemini-2.0-flash",
+            contents=prompt,
+            config=types.GenerateContentConfig(response_mime_type="application/json"),
+        )
         result_text = response.text.strip()
         analysis_data = json.loads(result_text)
         analysis_data["is_fallback"] = False
@@ -496,9 +507,11 @@ CONVERSATION HISTORY:
         return generate_coach_fallback_response(analysis, message)
 
     try:
-        genai.configure(api_key=api_key)
-        model = genai.GenerativeModel("gemini-3.5-flash")
-        response = model.generate_content(context)
+        client = genai.Client(api_key=api_key)
+        response = client.models.generate_content(
+            model="gemini-2.0-flash",
+            contents=context,
+        )
         return response.text.strip()
     except Exception as e:
         logger.error(
