@@ -42,6 +42,7 @@ CSRF_TRUSTED_ORIGINS = [
     "https://*.lhr.life",        # localhost.run tunnels
     "https://*.localhost.run",   # localhost.run custom domains
     "https://*.onrender.com",    # Render deployments
+    "https://*.vercel.app",      # Vercel deployments
 ]
 
 
@@ -92,10 +93,17 @@ WSGI_APPLICATION = "brainforge.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# On Vercel, the project root is read-only; use /tmp for SQLite.
+# On Render/local, use the project root as normal.
+if os.getenv("VERCEL"):
+    DB_PATH = "/tmp/db.sqlite3"
+else:
+    DB_PATH = BASE_DIR / "db.sqlite3"
+
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "NAME": DB_PATH,
     }
 }
 
